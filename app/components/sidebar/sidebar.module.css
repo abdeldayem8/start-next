@@ -1,0 +1,22 @@
+.side{
+  background-color: var(--bgSoft);
+  color: #b7bac1;
+}
+@media (max-width:767px){
+      .side{
+            display: none !important;
+      }
+}
+.link{  
+    margin:10px;
+}
+  
+.link:hover{
+      background-color: #2e374a;
+}
+
+.title{
+      display: inline-flex;
+      align-items: center;
+      padding: 5px;
+}    

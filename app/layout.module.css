@@ -1,0 +1,13 @@
+.layout{
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+}
+.content{
+    flex: 1;
+  }
+  .pagecontent{
+    padding: 1rem;
+  }
