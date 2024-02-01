@@ -2,17 +2,21 @@
 import { Menu, Popover, Transition,EditInactiveIcon } from "@headlessui/react";
 import Styles from "./navbar.module.css";
 import {HiOutlineBell, HiOutlineChatAlt, HiOutlineSearch,HiMenu} from 'react-icons/Hi';
-import { Fragment, useContext } from "react";
-import { CollapseContext } from "@/app/context/collapse";
-const Navbar =()=>{
-  const { toggleSidebar } = useContext(CollapseContext);
+import { Fragment, useEffect, useRef } from "react";
+import {togglesidebar,sidebaropen} from "../../store/collapseSlice"
+import { useDispatch, useSelector } from "react-redux";
 
-  return (
+const Navbar =()=>{
+ 
+    const name = useSelector(prevState => prevState.collapse.sidebaropen);
+    const dispatch = useDispatch();
+   
+   return (
    <div className={`${Styles.nav} h-16 px-4 flex justify-between items-center`}>
-      <HiMenu onClick={toggleSidebar}  className="cursor-pointer" />
+      <HiMenu  onClick={() => dispatch(togglesidebar())} className="cursor-pointer" />
     <div className="relative">
       <HiOutlineSearch fontSize={20} className="absolute top-1/2 -translate-y-1/2 left-3"/>
-      <input type="text" placeholder="Search..." className={`${Styles.search} text-sm focus:outline-none active:outline-none h-10 w-48  rounded-lg pl-11 pr-4`}/>
+      <input type="text" placeholder="Search..." className={`${Styles.search} text-sm focus:outline-none active:outline-none h-10   rounded-lg pl-11 pr-4 `}/>
     </div>
     <div className="flex items-center gap-2">
     <Popover className="relative">

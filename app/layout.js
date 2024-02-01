@@ -1,9 +1,10 @@
+
 import { Inter } from 'next/font/google'
 import './globals.css'
 import Navbar from './components/navbar/navbar'
 import Styles from "./layout.module.css"
 import Sidebar from './components/sidebar/sidebar'
-import CollapseProvider from "./context/collapse"
+import StoreProvider from './store/StoreProvider';
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -20,8 +21,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-      <CollapseProvider>
+
      <div className={Styles.layout}>
+     <StoreProvider>
       <Sidebar />
       <div className={Styles.content}>
       <Navbar  />
@@ -29,8 +31,8 @@ export default function RootLayout({ children }) {
       {children}
       </div>
       </div>
+      </StoreProvider>
       </div>
-      </CollapseProvider>
 
      
         </body>

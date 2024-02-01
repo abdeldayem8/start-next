@@ -1,11 +1,13 @@
-.side{
-  background-color: var(--bgSoft);
-  color: #b7bac1;
+.opened{
+      background-color: var(--bgSoft);
+      color: #b7bac1;
+      display: flex;
+      flex-direction: column;
+      padding: 12px;
+      width: 15rem;
 }
-@media (max-width:767px){
-      .side{
-            display: none !important;
-      }
+.closed{
+      display: none; 
 }
 .link{  
     margin:10px;
